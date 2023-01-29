@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var A = []
+        var subA = []
+        var subB = []
+
+        for (let i = 0; i < 2; i++) {
+            var x = parseInt(prompt('add numbers'))
+            subA.push(x)
+        }
+        for (let i = 0; i < 2; i++) {
+            var b = parseInt(prompt('add numbers'))
+            subB.push(b)
+        }
+
+
+        A.push(subA)
+        A.push(subB)
+
+        var B = []
+        var subA = []
+        var subB = []
+
+        for (let i = 0; i < 2; i++) {
+            var y = parseInt(prompt('add numbers'))
+            subA.push(y)
+        }
+        for (let i = 0; i < 2; i++) {
+            var z = parseInt(prompt('add numbers'))
+            subB.push(z)
+        }
+
+        B.push(subA)
+        B.push(subB)
+
+
+
+
+        function multiplyMatrices(m1, m2) {
+            var result = [];
+            for (var i = 0; i < m1.length; i++) {
+                result[i] = [];
+                for (var j = 0; j < m2[0].length; j++) {
+                    var sum = 0;
+                    for (var k = 0; k < m1[0].length; k++) {
+                        sum += m1[i][k] * m2[k][j];
+                    }
+                    result[i][j] = sum;
+                }
+            }
+            return result;
+        }
+
+        var m1 = A
+        var m2 = B
+
+        console.table(m1)
+        console.table(m2)
+        // // var m1 = [[1, 2], [3, 4]]
+        // // var m2 = [[5, 6], [7, 8]]
+
+        var mResult = multiplyMatrices(m1, m2)
+
+        // /*In Google Chrome and Firefox you can do:*/
+
+        console.table(mResult) /* it shows the matrix in a table */
+    </script>
+</body>
+
+</html>
